@@ -12,9 +12,9 @@ Steps:
 
 4.) Call `post` on the [LensHub V2 Mumbai Proxy](https://mumbai.polygonscan.com/address/0xC1E77eE73403B8a7478884915aA599932A677870) which will call `initializePublicationAction` on `HelloWorldSendPublicationAction.sol`. To encode txn calldata, there is a helper script which you can then manually submit to the Lens Hub contract: `bun install && bun run encodeInitPost.ts` 
 
-5.) Call `setTrustedRemote` on both the sender and receiver contracts, following the [LayerZero docs](https://layerzero.gitbook.io/docs/evm-guides/master/set-trusted-remotes). Be sure to use chainID from [LZ docs](https://layerzero.gitbook.io/docs/technical-reference/testnet/testnet-addresses) which is not same as network chainID 
+5.) Call `setTrustedRemote` on both the sender and receiver contracts, following the [LayerZero docs](https://layerzero.gitbook.io/docs/evm-guides/master/set-trusted-remotes). Be sure to use chainID from [LZ docs](https://layerzero.gitbook.io/docs/technical-reference/testnet/testnet-addresses) which is not same as network chainID. `encodeTrustedPath.ts` is a helper script to generate the path. 
 
-6.) Call `act` on the `LensHub` Mumbai address with the publicationID from step 4, with data field encoded as `(address target, string memory actionMessage, uint nativeFee) = abi.decode(params.actionModuleData, (address, string, uint));` where target is the address of the `HelloWorld.sol` contract, `actionMessage` is a string which will also be output on destination chain, and `nativeFee` is the maximum gas fee to be paid on Mumbai. 
+6.) Call `act` on the `LensHub` Mumbai address with the publicationID from step 4. `encodeAct.ts` is a helper script to encode the parameters for the cross-chain action. 
 
 
 After calling, LayerZero should execute the lzReceive automatically and there should be an event emitted from `HelloWorld.sol` with the init and action messages.
