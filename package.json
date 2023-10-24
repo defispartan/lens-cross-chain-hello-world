@@ -1,0 +1,14 @@
+{
+  "name": "hello-world",
+  "module": "encode.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ethers": "^5"
+  }
+}
