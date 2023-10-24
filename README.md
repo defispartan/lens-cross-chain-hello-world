@@ -1,6 +1,6 @@
 # Lens Open Action Cross-Chain Hello World
 
-Call `helloWorld` through a Lens Open Action, with a message related between Mumbai and Sepolia using LayerZero
+`HelloWorldSendPublicationAction.sol` is a Lens open action contract on Mumbai. When executed it relays a contract address and message through LayerZero to call a `helloWorld` function on Sepolia.
 
 Steps:
 
@@ -8,7 +8,7 @@ Steps:
 
 2.) Deploy `HelloWorldSendPublicationAction.sol` on Mumbai: `forge script script/HelloWorldMumbai.s.sol:HelloWorldMumbaiScript --rpc-url $MUMBAI_RPC_URL --broadcast --verify -vvvv` 
 
-3.) Deploy `HelloWorldReceivePublicationAction.sol` and `HellowWorld.sol` on Sepolia: `forge script script/HelloWorldSepolia.s.sol:HelloWorldSepoliaScript --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv` 
+3.) Deploy `HelloWorldReceivePublicationAction.sol` and `HelloWorld.sol` on Sepolia: `forge script script/HelloWorldSepolia.s.sol:HelloWorldSepoliaScript --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv` 
 
 4.) Call `post` on the [LensHub V2 Mumbai Proxy](https://mumbai.polygonscan.com/address/0xC1E77eE73403B8a7478884915aA599932A677870) which will call `initializePublicationAction` on `HelloWorldSendPublicationAction.sol`. To encode txn calldata, there is a helper script which you can then manually submit to the Lens Hub contract: `bun install && bun run encodeInitPost.ts` 
 
