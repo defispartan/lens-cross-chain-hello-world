@@ -19,10 +19,14 @@ Steps:
 
 After calling, LayerZero should execute the lzReceive automatically and there should be an event emitted from `HelloWorld.sol` with the init and action messages.
 
-Verified Deployments:
-`HelloWorldSendPublicationAction`: https://mumbai.polygonscan.com/address/0x31c94b3996B5E94DA7B72633D73b90a196f02e69
-`HelloWorldReceivePublicationAction`: https://sepolia.etherscan.io/address/0xD88D282f1A3eB7C3d647E1af6812043053e4dDaB
-`HelloWorld`: https://sepolia.etherscan.io/address/0xCC96F270885B7DfFb405841e2b0b189A8Ffc733b
+Verified Deployments: 
+
+`HelloWorldSendPublicationAction`: https://mumbai.polygonscan.com/address/0x31c94b3996B5E94DA7B72633D73b90a196f02e69 
+
+`HelloWorldReceivePublicationAction`: https://sepolia.etherscan.io/address/0xD88D282f1A3eB7C3d647E1af6812043053e4dDaB 
+
+`HelloWorld`: https://sepolia.etherscan.io/address/0xCC96F270885B7DfFb405841e2b0b189A8Ffc733b 
+
 
 ## Status
 
